@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  ce0:
+    container_name: astroneer-server
+    image: astroneer:latest
+    ports:
+      - 8777:8777/tcp
+      - 8777:8777/udp
+    volumes:
+      - /opt/servers/Astroneer/serverdata:/astroneer
+    networks: 
+      - default
+    tty: true
+networks:
+  default:
+    external:
+      name: game_net
